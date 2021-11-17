@@ -1,0 +1,47 @@
+
+syntax = "proto3";
+
+message Row {
+    optional int64 column_1 = 1;
+    optional int64 column_2 = 2;
+    optional int64 column_3 = 3;
+    optional int64 column_4 = 4;
+    optional int64 column_5 = 5;
+    optional int64 column_6 = 6;
+    optional int64 column_7 = 7;
+    optional int64 column_8 = 8;
+    optional int64 column_9 = 9;
+}
+
+message Sudoku {
+    Row row_1 = 1;
+    Row row_2 = 2;
+    Row row_3 = 3;
+    Row row_4 = 4;
+    Row row_5 = 5;
+    Row row_6 = 6;
+    Row row_7 = 7;
+    Row row_8 = 8;
+    Row row_9 = 9;
+}
+
+message UnsolvedSudokuRequest {
+    int64 request_id = 1;
+    Sudoku unsolved_sudoku = 2;
+}
+
+message SudokuResponse {
+    int64 request_id = 1;
+    optional Sudoku solved_sudoku = 2;
+    optional string error_message = 3;
+}
+
+message ConnectionRequest {
+    int64 request_id = 1;
+}
+
+message ConnectionResponse {
+    int64 request_id = 1;
+    bool success = 2;
+    optional string error_message = 3;
+}
