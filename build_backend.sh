@@ -8,7 +8,7 @@ else
     brew install protobuf
 fi
 
-echo "Generating C++ code from protocol"
+#echo "Generating C++ code from protocol"
 rm -rf backend/generated
 mkdir backend/generated
 protoc --proto_path=proto --cpp_out=backend/generated proto/sudoku_solver.proto

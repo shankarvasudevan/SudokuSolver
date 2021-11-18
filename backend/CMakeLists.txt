@@ -9,5 +9,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -g -Wall")
 
 find_package(Protobuf REQUIRED)
 include_directories(${PROTOBUF_INCLUDE_DIRS})
+#include_directories(${CMAKE_CURRENT_BINARY_DIR})
+#protobuf_generate_cpp(PROTO_SRC PROTO_HEADERS ../proto/sudoku_solver.proto)
 
-add_executable(sudoku_solver_backend ${headers} ${sources} ${headers2} ${sources2})
+add_executable(sudoku_solver_backend ${PROTOBUF_INCLUDE_DIRS} ${headers} ${sources} ${headers2} ${sources2})
+target_link_libraries(sudoku_solver_backend ${Protobuf_LIBRARIES})
