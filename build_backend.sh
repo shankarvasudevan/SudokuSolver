@@ -1,9 +1,8 @@
 echo "Building SudokuSolverBackend"
 
-cd backend
-rm -rf build
-mkdir build
-cd build
+rm -rf backend/build
+mkdir backend/build
+cd backend/build
 cmake ..
 make
 cd ../..
