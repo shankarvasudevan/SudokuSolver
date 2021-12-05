@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.1)
 file(GLOB headers  "*.h")
 file(GLOB sources  "*.cc")
  
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -g -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -g -Wall -Werror")
 
 find_package(Protobuf REQUIRED)
 include_directories(${PROTOBUF_INCLUDE_DIRS})
