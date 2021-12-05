@@ -1,3 +1,5 @@
 generated
 build
 .vscode
+bin
+obj
